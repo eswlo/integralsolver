@@ -1,4 +1,4 @@
-# CPSC 312 Project - Integral Solver
+# CPSC 312 Project 2 - Integral Solver
 by Kevin, Parsa, Evan
 
 <br>
