@@ -1,19 +1,28 @@
-% Tests for finding anti-derivatives:
 /*
+% Expression tests for finding anti-derivatives:
 
+% Test:
+100.
+-1.
+x.
+2*x.
+(-10)*x.
+20*x^2.
+1*x^(-2).
+sin(x).
+cos(x).
+3*sin(x).
+3*sin(x) + 5*x.
+3*sin(x) + 5*x^2 - (1/2)*x.
+3*cos(x) + 5*x^2 + log(e, x).
 
-
-
+% integral by parts, only work for trig (sin & cos)-algebraic combinations
+x*sin(x).
 */
 
 
 
-
-
-% Tests for IVP:
 /*
-
-
-
-
+% Tests for IVP:
+% Can use the tests used for finding anti-derivatives above.
 */
