@@ -24,5 +24,7 @@ x*sin(x).
 
 /*
 % Tests for IVP:
-% Can use the tests used for finding anti-derivatives above.
+% Can use the tests used for finding anti-derivatives above, or the following ones:
+sec(x).
+
 */
