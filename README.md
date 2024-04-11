@@ -27,6 +27,6 @@ by Kevin, Parsa, Evan
   * e^x
 * Option 3 (solving initial-value problems) currently support the following non-exhaustive functions:
   * Constant, polynomial, power, and logarithmic functions
-  * Trigonometric functions, except for tan & cot
+  * sin & cos functions
   * e^x
    
