@@ -1,5 +1,5 @@
 # CPSC 312 Project 2 - Integral Solver
-by Kevin, Parsa, Evan
+by Kevin, Parsa, Shih-Wei
 
 <br>
 
