@@ -1,5 +1,4 @@
 :- module(definite, [definite/4]).
-:- use_module(evaluate).
 %% ============================ Evaluator ===================================
 % RESTRICTIONS ON FUNCTIONS
 % TRIG: Sin and Cos defined everywhere. Tan is indefined at pi/2 + npi where n is an integer
@@ -18,16 +17,28 @@ definite(_,A,A,0).
 definite(X,_,_,X) :- number(X).
 
 % Basic polynomials
-definite(X, A, B, R) :- R is (B - A). 
+definite(x, A, B, R) :- R is (B - A). 
+definite(X^1, A,B,R) :- definite(X,A,B,R).
+definite(_^0, A,B,R) :- definite(1,A,B,R).
+definite(X^(-1), A,B,R) :- definite(1/X,A,B,R).
+
+% ------------------
+definite(X^N, A, B, R) :- 
+    integer(N), 
+    N > 1,
+    N1 is (N - 1), 
+    definite(X^N1, A, B,  R1),
+    definite(X,A,B,R2),
+    R is (R1*R2).
 
 definite(X^N, A, B, R) :- 
-    integer(N),
-    atomic(X),
-    exp_calc(A, N, R1),
-    exp_calc(B, N, R2),
-    R is (R2 - R1).
+    integer(N), 
+    N < -1,
+    N1 is (-N),
+    definite(X^N1, A, B,  R1),
+    R is (1/R1).
 
-
+% ------------------
 
 % Exponentials 
 definite(X^x, 0, B, X^B - 1) :- integer(X).
@@ -37,7 +48,6 @@ definite(X^x, A, B, X^B - X^A) :- integer(X).
 % Logarithms
 definite(log(Base,x), 1, B, log(Base, B)).
 definite(log(Base,x), A, 1, -log(Base,A)).
-definite(log(Base,x), A, B, log(Base, B) - log(Base, A)).
 
 % Trig fxns
 definite(sin(x), N*pi,M*pi, 0) :- 
@@ -69,11 +79,10 @@ definite(tan(x), A, B, R) :- definite(sin(x)/cos(x), A, B, R).
 definite(sec(x), A, B, R) :- definite(1/cos(x), A, B, R).
 definite(csc(x), A, B, R) :- definite(1/sin(x), A, B, R).
 
-% General structure)
+% General structure
 definite(X1+X2,A,B,R) :- definite(X1,A,B,R1), definite(X2,A,B,R2), R is (R1 + R2).
 definite(X1-X2,A,B,R) :- definite(X1,A,B,R1), definite(X2,A,B,R2), R is (R1 - R2).
 definite(X1*X2,A,B,R) :- definite(X1,A,B,R1), definite(X2,A,B,R2), R is (R1 * R2).
 definite(X1/X2,A,B,R) :- definite(X1,A,B,R1), definite(X2,A,B,R2), dif(R2,0) ,R is (R1 / R2).
-
 
 

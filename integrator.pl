@@ -88,6 +88,8 @@ integrate(tan(X),X, sec(X)^2).
 integrate(cot(X),X, -csc(X)^2).
 integrate(sec(X),X, sec(X)*tan(x)).
 integrate(csc(X),X, -cot(X)*csc(x)).
+% integrate(sec(X),X, log(e, abs(sec(X)+tan(x)))).
+% integrate(csc(X),X, -log(e, abs(cot(X)*csc(x)))).
 
 integrate(1/sin(X),X, R) :- integrate(csc(X),X, R).
 integrate(1/cos(X),X, R) :- integrate(sec(X),X, R).

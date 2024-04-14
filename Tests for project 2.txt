@@ -1,7 +1,7 @@
-/*
-% Expression tests for finding anti-derivatives:
+% cd("C:/Users/swlco/OneDrive/Documents/Prolog/integralsolver").
 
-% Test:
+% =======Expression tests for finding anti-derivatives:===========================
+/*
 100.
 -1.
 x.
@@ -22,9 +22,24 @@ x*sin(x).
 
 
 
+% =======Expression tests for computing definite integral:===========================
+/*
+x. -1. 1. => 2
+x^2. -1. 1. => 0
+2^x. 0. 2.
+log(2,x). 1. 2.
+sin(x). 2*pi. 3*pi.
+cos(x). pi/2 + 2*pi. pi/2+3*pi.
+
+% for error handling
+log(e,5). -1. 7.
+*/
+
+
+
+
+
 /*
 % Tests for IVP:
 % Can use the tests used for finding anti-derivatives above, or the following ones:
-sec(x).
-
 */
