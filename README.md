@@ -1,5 +1,5 @@
 # CPSC 312 Project 2 - Integral Solver
-by Kevin, Parsa, Evan
+by Kevin, Parsa, Shih-Wei
 
 <br>
 
@@ -27,6 +27,6 @@ by Kevin, Parsa, Evan
   * e^x
 * Option 3 (solving initial-value problems) currently support the following non-exhaustive functions:
   * Constant, polynomial, power, and logarithmic functions
-  * Trigonometric functions
+  * sin & cos functions
   * e^x
    
